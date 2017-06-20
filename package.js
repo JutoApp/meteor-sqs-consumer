@@ -1,6 +1,6 @@
 Package.describe({
   name: 'juto:sqs-consumer',
-  version: '1.0.0',
+  version: '1.0.1',
   // Brief, one-line summary of the package.
   summary: 'A simple meteor wrapper package for the sqs-consumer npm package.',
   // URL to the Git repository containing the source code for this package.
@@ -16,7 +16,7 @@ Npm.depends({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
-  api.use('ecmascript');
-  api.mainModule('sqs-consumer.js');
-  api.export("Consumer");
+  api.use('ecmascript','server');
+  api.mainModule('sqs-consumer.js','server');
+  api.export("Consumer",'server');
 });
